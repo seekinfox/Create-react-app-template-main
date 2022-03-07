@@ -1,0 +1,81 @@
+@use "../../stylesheets/abstracts/mixins" as m;
+@use "../../stylesheets/abstracts/variables" as v;
+
+.Editor {
+   border: 1px solid v.$main-gray;
+   height: 80vh;
+   border-radius: .5rem;
+   overflow: hidden;
+}
+
+.editor__buttons {
+   @include m.flex_row;
+   background-color: v.$gray-100;
+   > button {
+      cursor: pointer;
+      background-color: transparent;
+      padding: 1rem;
+      border:0;
+      text-transform: capitalize;
+      font-family: v.$hubb;
+      font-weight: bold;
+      letter-spacing: 1px;
+      @include m.flex_row;
+      @include m.flex_center;
+      color: v.$gray-000;
+
+      > svg {
+         font-size: 1.1rem;
+         margin: 0 .5rem;
+      }
+   }
+   .active {
+      background-color: v.$white;
+      color: rgba(0, 0, 0, .8);
+
+   }
+   .active2 {
+      border-bottom: none;
+   }
+}
+
+.editor__inner_container {
+   height: 100%;
+}
+
+.editor__textarea {
+   font-family: v.$hubb;
+   font-size: 1.3rem;
+   height: 100%;
+   width: 100%;
+   resize: none;
+   padding: 1rem 2rem;
+   border: none;
+   &:focus {
+      outline: none;
+      cursor: text;
+   }
+}
+
+.editor__output {
+   font-size: 1.3rem;
+   font-family: v.$hubb;
+   padding: 1rem 5rem;
+   border-radius: .5rem;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   overflow-y: scroll;
+}
+.editor__output_is_empty {
+   @extend .editor__output;
+   @include m.flex_row;
+   @include m.flex_center;
+   font-size: 3rem;
+   text-transform: capitalize;
+   opacity: .5;
+
+   >svg {
+      margin: 0 1rem;
+   }
+}

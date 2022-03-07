@@ -1,0 +1,21 @@
+@use "./stylesheets/abstracts/variables" as v;
+@use "./stylesheets/abstracts/mixins" as m;
+
+.App {
+   padding:0 2em;
+   overflow: hidden;
+   > header {
+      width: fit-content;
+      text-align: left;
+      font-size: 2rem;
+      color: v.$black;
+
+      > h1 {
+         opacity: .6;
+         font-size: 2rem;
+         font-family: v.$leck;
+         line-height: 5rem;
+         margin: 0;
+      }
+   }
+}
