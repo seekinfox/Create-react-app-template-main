@@ -39,7 +39,7 @@ export default function Editor() {
           {text === "" ? 
             <div className={style.editor__output_is_empty}>
               <BsPencilSquare />
-              <span>editor is empty yo!</span>
+              <span>editor is empty!</span>
             </div>
           :
             <div dangerouslySetInnerHTML={{__html:md.render(text)}}

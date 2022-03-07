@@ -23,7 +23,7 @@ function App() {
     animate={load ? {x:0}:{x:0}}
     className={style.App}>
       <header>
-        <h1>Write it down yo!</h1>
+        <h1>Write it down!</h1>
       </header>
       <Editor />
     </motion.div>
