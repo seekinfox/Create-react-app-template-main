@@ -3,9 +3,10 @@
 
 .Editor {
    border: 1px solid v.$main-gray;
-   height: 80vh;
+   height: 85vh;
    border-radius: .5rem;
    overflow: hidden;
+   overflow-y: scroll;
 }
 
 .editor__buttons {
@@ -16,6 +17,7 @@
       background-color: transparent;
       padding: 1rem;
       border:0;
+      width: 100%;
       text-transform: capitalize;
       font-family: v.$hubb;
       font-weight: bold;
@@ -23,7 +25,9 @@
       @include m.flex_row;
       @include m.flex_center;
       color: v.$gray-000;
-
+      @include m.desktop {
+         width: fit-content;
+      }
       > svg {
          font-size: 1.1rem;
          margin: 0 .5rem;
@@ -71,11 +75,16 @@
    @extend .editor__output;
    @include m.flex_row;
    @include m.flex_center;
-   font-size: 3rem;
    text-transform: capitalize;
    opacity: .5;
-
+   font-size: 1.4rem;
+   @include m.desktop {
+      font-size: 3rem;
+   }
    >svg {
-      margin: 0 1rem;
+      margin: 0 .5rem;
+      @include m.desktop {
+         margin: 0 1rem;
+      }
    }
 }
