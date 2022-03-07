@@ -1,0 +1,65 @@
+@use "../../stylesheets/abstracts/mixins" as m;
+@use "../../stylesheets/abstracts/variables" as v;
+
+.loading__container {
+   position: absolute;
+   top:0;
+   left: 0;
+   width: 100%;
+   height: 100vh; 
+   @include m.flex_row;
+   align-items: center;
+   > svg {
+      opacity: .8;
+      margin-bottom: 3.5rem;
+      font-size: 4rem;
+      transform: translateX(-95vw);
+      animation: pencil 2.5s linear infinite;
+   }   
+   &::before {
+      content: "";
+      width: 100vw;
+      height: 3px;
+      opacity: .7;
+      background-color: v.$black;
+      transform: translateX(-95vw);
+      animation: line 2.5s linear infinite;
+   }
+   &::after {
+      content: "";
+      width: 3rem;
+      height: 1rem;
+      opacity: .1;
+      margin-left: -3rem;
+      background-color: v.$black;
+      margin-bottom: 1.2rem;
+      transform: translateX(-95vw) skewY(-20deg);
+      border-radius: 50%;
+      animation: shadow 2.5s linear infinite;
+   }
+}
+
+@keyframes pencil {
+   from {
+      transform: translateX(-95vw);
+   }
+   to {
+      transform: translateX(0);
+   }
+}
+@keyframes line {
+   from {
+      transform: translateX(-95vw);
+   }
+   to {
+      transform: translateX(0);
+   }
+}
+@keyframes shadow {
+   from {
+      transform: translateX(-95vw) skewY(-20deg);
+   }
+   to {
+      transform: translateX(0) skewY(-25deg);
+   }
+}
